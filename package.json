@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nodemon src/server.js"
+    "start": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -22,8 +22,10 @@
   },
   "homepage": "https://github.com/muhammedjavadksd/s3-bucket-with-localStack#readme",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.614.0",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "express-fileupload": "^1.5.1",
     "mongoose": "^8.5.1",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.4"
