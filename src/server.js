@@ -2,12 +2,17 @@
 const express = require("express");
 const app = express();
 const env = require("dotenv");
-const userRouter = require("./router/userRouter");
 const logger = require("morgan");
 const fileUpload = require("express-fileupload");
+// require("./.env")
 
-env.config({ path: "./.env" })
+
+env.config({ path: "./.env" }) 
 const PORT = process.env.PORT || 8000;
+
+
+const userRouter = require("./router/userRouter");
+
 
 app.use(logger("combined"))
 app.use(express.json());
