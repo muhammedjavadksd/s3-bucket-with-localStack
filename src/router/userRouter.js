@@ -6,3 +6,4 @@ const userController= new UserController()
 
 userRouter.post("/upload_image", userController.uploadImage)
 
+module.exports = userRouter
