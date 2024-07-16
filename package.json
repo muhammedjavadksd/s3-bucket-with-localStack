@@ -1,0 +1,30 @@
+{
+  "name": "s3-in-node-with-localstack",
+  "version": "1.0.0",
+  "description": "s3 with localStack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammedjavadksd/s3-bucket-with-localStack.git"
+  },
+  "keywords": [
+    "s3",
+    "bucket"
+  ],
+  "author": "Muhammed Javad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muhammedjavadksd/s3-bucket-with-localStack/issues"
+  },
+  "homepage": "https://github.com/muhammedjavadksd/s3-bucket-with-localStack#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.4"
+  }
+}
