@@ -6,6 +6,7 @@ class FileService {
     async uploadImageToS3Bucket(file,presigned_url) {
         try {
             
+            console.log(presigned_url);
             const request = await fetch(presigned_url, {
                 method: "PUT",
                 body: file,
@@ -13,7 +14,8 @@ class FileService {
                     'Content-Type': file.type,
                 }
             });
-            const response = await request.json();
+            console.log(request);
+            // const response = await request.json();
             if (!request.ok) {
                 throw new Error("Upload image failed")
             }
