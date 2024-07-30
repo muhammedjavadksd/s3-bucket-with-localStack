@@ -18,12 +18,7 @@ class UserController {
     async uploadImage(req, res, next) {
         const file = req.file;
         const url = req.body.presigned_url;
-
-        console.log(file);
-
-
-
-        const uploadImage = await this.fileService.uploadImageToS3Bucket(file, url);
+        const uploadImage = await this.fileService.uploadImageToS3Bucket(file.buffer, url);
         if (uploadImage) {
             res.status(201).json({ status: true, msg: "Image upload success" })
         } else {

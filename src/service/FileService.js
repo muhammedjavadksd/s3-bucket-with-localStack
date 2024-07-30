@@ -7,6 +7,7 @@ class FileService {
         try {
 
             console.log(presigned_url);
+            console.log(file);
             const request = await fetch(presigned_url, {
                 method: "PUT",
                 body: file,
