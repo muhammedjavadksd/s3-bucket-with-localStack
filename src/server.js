@@ -22,9 +22,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use("/", userRouter)
 
 app.use((err, req, res, next) => {
-    console.log(err);
     console.log("error occured");
-    // console.log(err);
+    res.status(500).json({ status: false, msg: "Something went wrong" })
 })
 
 
