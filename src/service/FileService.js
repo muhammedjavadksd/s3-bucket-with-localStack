@@ -2,18 +2,19 @@ const S3BucketClientService = require("./S3BucketClient");
 
 class FileService {
 
-    
-    async uploadImageToS3Bucket(file,presigned_url) {
+
+    async uploadImageToS3Bucket(file, presigned_url) {
         try {
-            
+
             console.log(presigned_url);
             const request = await fetch(presigned_url, {
                 method: "PUT",
                 body: file,
                 headers: {
-                    'Content-Type': file.type,
+                    'Content-Type': file.mimetype,
                 }
             });
+
             console.log(request);
             // const response = await request.json();
             if (!request.ok) {
@@ -28,4 +29,4 @@ class FileService {
     }
 }
 
-module.exports= FileService
+module.exports = FileService

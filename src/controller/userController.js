@@ -16,8 +16,12 @@ class UserController {
     }
 
     async uploadImage(req, res, next) {
-        const file = req.files.image;
+        const file = req.file;
         const url = req.body.presigned_url;
+
+        console.log(file);
+
+
 
         const uploadImage = await this.fileService.uploadImageToS3Bucket(file, url);
         if (uploadImage) {
@@ -41,8 +45,6 @@ class UserController {
             keysData[index] = url
         }
 
-        console.log("Output");
-        console.log(keysData);
         if (keysData.length) {
             res.status(200).json({ url: keysData, status: true })
         } else {
